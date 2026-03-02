@@ -1,0 +1,18 @@
+# Compiler ve seçenekler
+CC = gcc
+CFLAGS = -Wall -pthread
+
+# Target: hepsi
+all: server client
+
+# Server derleme
+server:
+	$(CC) server/server.c -o server/server $(CFLAGS)
+
+# Client derleme
+client:
+	$(CC) client/client.c -o client/client $(CFLAGS)
+
+# Temizlik
+clean:
+	rm -f server/server client/client
